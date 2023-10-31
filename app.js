@@ -11,6 +11,14 @@ const conditions = [
     [0,4,8],
     [2,4,6]
 ]
+// const name1 = prompt("enter first player name")
+// while(!name1){
+//     name1 = prompt("dont mess with me enter the name")
+// }
+// const name2 = prompt("enter second player name")
+// while(!name2){
+//     name2 = prompt("dont mess with me enter the name")
+// }
 let options = ["","","","","","","","",""]
 let current = "X"
 let running = false
@@ -21,7 +29,7 @@ function initializeApp(){
         cell.addEventListener('click',click)
     })
     btn.addEventListener('click',restart)
-    result.innerHTML = `"${current}" is playing guys`
+    result.innerHTML = `${current} is playing guys`
     running = true 
 
 }
@@ -39,7 +47,7 @@ function upDate(cell,index){
 }
 function Switch(){
     current = (current === "X")?"O":"X"
-    result.textContent = `"${current}" is playing guys`
+    result.textContent = `${current} is playing guys`
 }
 function checkWinner(){
     let won = false
@@ -68,7 +76,7 @@ function checkWinner(){
 }
 function restart(){
     current ="X"
-    let options = ["","","","","","","","",""]
+         options = ["","","","","","","","",""]
     result.innerHTML= `${current} is playing guys`
     cells.forEach(cell=>cell.innerHTML="")
     running = true
