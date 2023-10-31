@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@700&family=Open+Sans:wght@600;800&family=Roboto:wght@500&display=swap');
+body{
+    background-color: pink;
+}
+.each{
+    width: 90px;
+    height: 90px;
+    border: 2px solid grey;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: blanchedalmond;
+    margin: 2px;
+    color: red;
+}
+.game{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 270px;
+    margin: auto;    
+}
+h1{
+    font-family: 'Open Sans';
+    text-align: center;
+    margin-left: 0px;
+    color: chocolate;
+}
+.btn{
+    width: 100px;
+    padding: 5px 25px;
+    background-color: rgb(227, 171, 98);
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    border: 0px ;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+    font-family: 'Edu TAS Beginner', cursive;
+}
