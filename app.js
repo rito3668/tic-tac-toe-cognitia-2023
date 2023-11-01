@@ -106,6 +106,7 @@ function checkWinner(){
     }
     else if(!options.includes("")){
         result.innerHTML = `The Match is Draw Guys`
+        setTimeout(()=>alert("The Match is Draw Guys"),500)
         running = false
     }else{
         Switch()
