@@ -43,6 +43,24 @@ h1{
     margin: 20px auto;
     cursor: pointer;
 }
+.start{
+    width: 100px;
+    padding: 5px 25px;
+    background-color: rgb(227, 171, 98);
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans';
+    border: 0px ;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    
+}
+.btns{
+    padding: 0;
+    margin-top: 40px;
+}
 h2{
     text-align: center;
     font-family: 'Edu TAS Beginner', cursive;

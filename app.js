@@ -1,5 +1,6 @@
 const cells = document.querySelectorAll('.each')
 const btn = document.querySelector('.btn')
+const startBtn = document.querySelector('.start')
 const result = document.querySelector('.result')
 const conditions = [
     [0,1,2],
@@ -11,20 +12,25 @@ const conditions = [
     [0,4,8],
     [2,4,6]
 ]
-let name1 = prompt("enter first player name")
-while(name1.trim().length===0){
-    name1 = prompt("dont mess with me enter the name")
-}
-let name2 = prompt("enter second player name")
-while(!name2){
-    name2 = prompt("dont mess with me enter the name")
-}
+let name1
+let name2
+let wins = []
 let options = ["","","","","","","","",""]
 let current = "X"
 let running = false
-initializeApp()
+askNames()
+function askNames(){
+    name1 = prompt("enter first player name")
+    while(name1.trim().length===0){
+        name1 = prompt("dont mess with me enter the name")
+    }
+    name2 = prompt("enter second player name")
+    while(!name2){
+        name2 = prompt("dont mess with me enter the name")
+    }  
+}
 function initializeApp(){
-       
+    
     cells.forEach(cell=>{
         cell.addEventListener('click',click)
     })
@@ -32,6 +38,10 @@ function initializeApp(){
     result.innerHTML = `${current==="X"?name1:name2} is playing guys`
     running = true 
 
+}
+startBtn.addEventListener('click',initializeApp)
+function  popup(winner){
+    setTimeout(()=>alert(`${winner} has won the game`),500)
 }
 function click(){
     const no = this.getAttribute('cellNo')
@@ -65,6 +75,8 @@ function checkWinner(){
     if(won){
         result.innerHTML = `${current==="X"?name1:name2} has won the game guys`
         running = false
+        popup(current==="X"?name1:name2)
+        current === "X"?wins.push(name1):wins.push(name2)
     }
     else if(!options.includes("")){
         result.innerHTML = `The Match is Draw Guys`
