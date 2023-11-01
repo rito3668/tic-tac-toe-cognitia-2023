@@ -62,6 +62,7 @@ function initializeApp(){
     btn.addEventListener('click',restart)
     result.innerHTML = `${current==="X"?name1:name2} is playing guys`
     running = true 
+    startBtn.setAttribute("disabled","")
 
 }
 startBtn.addEventListener('click',initializeApp)
