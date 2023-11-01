@@ -12,6 +12,10 @@ const conditions = [
     [0,4,8],
     [2,4,6]
 ]
+let w1=0
+let l1=0
+let w2=0
+let l2=0
 let name1
 let name2
 let wins = []
@@ -29,8 +33,29 @@ function askNames(){
         name2 = prompt("dont mess with me enter the name")
     }  
 }
+document.querySelector('.n1').innerHTML = name1
+document.querySelector('.n2').innerHTML = name2
+function upDateNames(){
+    document.querySelector('.w1').innerHTML = w1
+    document.querySelector('.l1').innerHTML = l1
+    document.querySelector('.w2').innerHTML = w2
+    document.querySelector('.l2').innerHTML = l2
+}
+function afterWon(winner){
+    if(winner === "X"){
+        w1++ 
+        l2++
+        document.querySelector('.w1').innerHTML = w1
+        document.querySelector('.l2').innerHTML = l2
+    }else{
+        w2++
+        l1++
+        document.querySelector('.w2').innerHTML = w2
+        document.querySelector('.l1').innerHTML = l1
+    }
+}
 function initializeApp(){
-    
+    upDateNames()
     cells.forEach(cell=>{
         cell.addEventListener('click',click)
     })
@@ -76,6 +101,7 @@ function checkWinner(){
         result.innerHTML = `${current==="X"?name1:name2} has won the game guys`
         running = false
         popup(current==="X"?name1:name2)
+        afterWon(current)
         current === "X"?wins.push(name1):wins.push(name2)
     }
     else if(!options.includes("")){
